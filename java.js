@@ -33,7 +33,23 @@ const result2 = document.createElement("p")
 results.appendChild(result1);
 results.appendChild(result2);
 
+//create button that appears when the game is over in order to restart
+
 // All functions below v
+
+function restartGame(){
+    const restart = document.createElement("button");
+    restart.textContent = "Click to restart Game";
+    div.appendChild(restart);
+    restart.addEventListener("click", () => {
+        buttonPaper.disabled = false;
+        buttonScissors.disabled = false;
+        buttonRock.disabled = false;
+        div.removeChild(restart)
+        result1.textContent = "";
+        result2.textContent ="";
+    })
+}
 
 function playRound (humanInput){
     let computer = getComputerChoice();
@@ -52,9 +68,17 @@ function playRound (humanInput){
     
     if(humanScore==5){
         result2.textContent = "You win! Humans were always meant to beat computers!!!";
+        buttonPaper.disabled = true;
+        buttonScissors.disabled = true;
+        buttonRock.disabled = true;
+        restartGame();
     }
     else if (computerScore==5){
         result2.textContent = "Fuuuuu! The computer absolutely obliterated you! You lose!"
+        buttonPaper.disabled = true;
+        buttonScissors.disabled = true;
+        buttonRock.disabled = true;
+        restartGame();
     }
     else {
     result2.textContent = "The new score is Human: "+humanScore+" and Computer: "+computerScore;
