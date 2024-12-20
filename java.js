@@ -48,6 +48,8 @@ function restartGame(){
         div.removeChild(restart)
         result1.textContent = "";
         result2.textContent ="";
+        computerScore = 0;
+        humanScore = 0;
     })
 }
 
@@ -67,14 +69,14 @@ function playRound (humanInput){
     }
     
     if(humanScore==5){
-        result2.textContent = "You win! Humans were always meant to beat computers!!!";
+        result2.textContent = "You win "+humanScore+" to "+computerScore+"! Humans were always meant to beat computers!!!";
         buttonPaper.disabled = true;
         buttonScissors.disabled = true;
         buttonRock.disabled = true;
         restartGame();
     }
     else if (computerScore==5){
-        result2.textContent = "Fuuuuu! The computer absolutely obliterated you! You lose!"
+        result2.textContent = "Daaaaamn! The computer absolutely obliterated you! You lose "+computerScore+" to "+humanScore+"!"
         buttonPaper.disabled = true;
         buttonScissors.disabled = true;
         buttonRock.disabled = true;
