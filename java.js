@@ -48,8 +48,13 @@ function restartGame(){
         div.removeChild(restart)
         result1.textContent = "";
         result2.textContent ="";
+<<<<<<< HEAD
         computerScore = 0;
         humanScore = 0;
+=======
+        humanScore = 0;
+        computerScore = 0;
+>>>>>>> 7913a0cdb0031db0fe84ecd48ec76eaf14352219
     })
 }
 
